@@ -1,5 +1,5 @@
 import express from "express";
-import { addReview, createProduct, deleteProduct, getAllProducts, getAllReviews, getProductById, updateProduct } from "../controllers/userController.js";
+import { addReview, createProduct, deleteProduct, deleteReview, getAllProducts, getAllReviews, getProductById, updateProduct, updateReview } from "../controllers/userController.js";
 const router=express.Router();
 
 router.post("",createProduct);
@@ -16,8 +16,8 @@ router.post("/:productid/reviews",addReview);
 
 router.get("/:productid/reviews",getAllReviews);
 
-router.put("/:productid/reviews/:reviewid",addReview);
+router.put("/:productid/reviews/:reviewid",updateReview);
 
-router.delete("/:productid/reviews/:reviewid",addReview);
+router.delete("/:productid/reviews/:reviewid",deleteReview);
 
 export default router;
